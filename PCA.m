@@ -1,4 +1,4 @@
-function [ Z , W ] = PCAHW( X , dim )
+function [ Z , W ] = PCA( X , dim )
 %This function analizes principal components of X and returns transform
 %Input variables
 %X = input data matrix
