@@ -22,7 +22,7 @@ XRe=DatRe(:,1:end-1);
 % =========================================
 %PCA on entire dataset
 %Calculate PCA except the last feature ('class label')
-[Map1,w{1}]=PCAHW(XRe,2);
+[Map1,w{1}]=PCA(XRe,2);
 
 figure();
 plot(Map1(1:178,2),Map1(1:178,1),'*b');
@@ -41,8 +41,8 @@ disp(strcat('Error for PCA on all:',num2str(abs(sum(label-X(:,65))))));
 %PCA on class1 and class0.
 %Calculate two PCAs seperetely. This is not feasible where the two
 %transformations are different. So their mappings are different.
-[PCAX1,w{1}]=PCAHW(XRe(1:178,:),2);
-[PCAX2,w{2}]=PCAHW(XRe(179:end,:),2);
+[PCAX1,w{1}]=PCA(XRe(1:178,:),2);
+[PCAX2,w{2}]=PCA(XRe(179:end,:),2);
 
 figure();
 plot(PCAX1(:,2),PCAX1(:,1),'*b');
@@ -67,7 +67,7 @@ disp(strcat('Error for PCA seperately:',num2str(abs(sum(label-X(:,65))))));
 
 rec{1}=mrmr_mid_d(XRe,X(:,65),2),
 ind=rec{1};
-[Map2el,w{3}]=PCAHW(XRe(:,ind),2);
+[Map2el,w{3}]=PCA(XRe(:,ind),2);
 
 figure();
 plot(Map2el(1:178,2),Map2el(1:178,1),'*b');
@@ -81,7 +81,7 @@ disp(strcat('Error for mRMR-2:',num2str(abs(sum(label-X(:,65))))));
 
 rec{2}=mrmr_mid_d(XRe,X(:,65),5),
 ind=rec{2};
-[Map5el,w{4}]=PCAHW(XRe(:,ind),2);
+[Map5el,w{4}]=PCA(XRe(:,ind),2);
 
 figure();
 plot(Map5el(1:178,2),Map5el(1:178,1),'*b');
@@ -94,7 +94,7 @@ disp(strcat('Error for mRMR-5:',num2str(abs(sum(label-X(:,65))))));
 
 rec{3}=mrmr_mid_d(XRe,X(:,65),10),
 ind=rec{3};
-[Map5el,w{5}]=PCAHW(XRe(:,ind),2);
+[Map5el,w{5}]=PCA(XRe(:,ind),2);
 
 figure();
 plot(Map5el(1:178,2),Map5el(1:178,1),'*b');
@@ -111,7 +111,7 @@ disp(strcat('Error for mRMR-10:',num2str(abs(sum(label-X(:,65))))));
 
 % =========================================
 %K-means clustering with last data obtained in Q2
-[b,mean,error]=KmeansHW(Map5el,2);
+[b,mean,error]=Kmeans(Map5el,2);
 figure();
 plot(Map5el(find(b(:,1)>0),2),Map5el(find(b(:,1)>0),1),'*b');
 hold();
@@ -121,7 +121,7 @@ title('2-means Clustering');
 legend('cluster-1','cluster-2','center-means');
 disp(strcat('error for 2=',num2str(error)));
 
-[b,mean,error]=KmeansHW(Map5el,3);
+[b,mean,error]=Kmeans(Map5el,3);
 figure();
 plot(Map5el(find(b(:,1)>0),2),Map5el(find(b(:,1)>0),1),'*b');
 hold();
@@ -132,7 +132,7 @@ title('3-means Clustering');
 legend('cluster-1','cluster-2','cluster-3','center-means');
 disp(strcat('error for 3=',num2str(error)));
 
-[b,mean,error]=KmeansHW(Map5el,4);
+[b,mean,error]=Kmeans(Map5el,4);
 figure();
 plot(Map5el(find(b(:,1)>0),2),Map5el(find(b(:,1)>0),1),'*b');
 hold();
