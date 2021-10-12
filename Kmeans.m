@@ -1,6 +1,6 @@
-function [ b , mean , error] = KmeansHW( X , dim  )
+function [ b , mean , error] = Kmeans( X , dim  )
 %This function clusters given data set using the k-means algorithm
-%›nput Variables
+%√ùnput Variables
 %X         := input data matrix
 %dim       := number of clusters to be obtained
 
