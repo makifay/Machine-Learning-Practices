@@ -1,4 +1,4 @@
-%Machine Learning HomeWorks
+%Machine Learning Homework - Driver Code 
 
 close all;
 clear all;
