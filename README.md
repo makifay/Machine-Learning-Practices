@@ -1,5 +1,6 @@
 # Machine-Learning-Practices
 **ITU BLG 527E - Machine Learning Course **
+
 Various Examples of Machine Learning Methods
 
 - K means
@@ -7,3 +8,4 @@ Various Examples of Machine Learning Methods
 - Quadratic Discriminant Analysis
 - Expectation Maximization
 - Principal Component Analysis 
+- Hidden Markov Models
