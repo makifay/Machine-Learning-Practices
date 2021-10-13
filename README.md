@@ -1,8 +1,7 @@
 # Machine-Learning-Practices
-**ITU BLG 527E - Machine Learning Course **
+ITU BLG 527E - Machine Learning Course 
 
-Various Examples of Machine Learning Methods
-
+Some Examples of Machine Learning Methods
 - K means
 - Linear Discriminant Analysis
 - Quadratic Discriminant Analysis
